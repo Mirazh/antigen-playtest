@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Антиген · сверка «кадр в кадр»</title>
+    <script type="module" crossorigin src="./assets/parity-BdMq056u.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/dispatch-DJGccjZh.js">
+  </head>
+  <body data-antigen-page="parity">
+    <!--
+      Страница оснастки, а не игры: из шести слоёв §14.3 здесь нужен ровно канвас поля — на нём
+      поднимается настоящее приложение Pixi, потому что сверка обязана идти тем же кодом
+      представления, каким идёт игра (T-0.5.8, D129). Панель, HUD и оверлеи к волне отношения не
+      имеют и в сверку не входят, поэтому ни их разметки, ни `layout.css` тут нет.
+
+      Ничего не запускается само: скрипт публикует `window.__antigen`, а волну просит спек.
+
+      `data-antigen-page` — метка, по которой спек опознаёт страницу. Она нужна, потому что `vite
+      preview` отдаёт на ненайденный путь ЗАПАСНОЙ `index.html` со статусом 200: не собери сборка
+      `parity.html` (выпавшая точка входа `rollupOptions.input`) — и спек получил бы страницу игры,
+      код ответа 200 и тридцатисекундный таймаут ожидания хука вместо внятного отказа.
+    -->
+    <canvas id="field"></canvas>
+  </body>
+</html>

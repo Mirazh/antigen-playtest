@@ -1,0 +1,233 @@
+{
+  "tower:macrophage": {
+    "id": "tower:macrophage",
+    "damageType": "damage:kinetic",
+    "radius": 2.5,
+    "dps": 20,
+    "hitTicks": 20,
+    "hitDamage": 20,
+    "cost": 100,
+    "hp": 300,
+    "priority": "first",
+    "effects": [],
+    "upgrades": {
+      "a1": {
+        "id": "upgrade:macrophage.a1",
+        "cost": 60,
+        "effects": [
+          {
+            "kind": "damage_mult_permille",
+            "value": 500
+          }
+        ]
+      },
+      "a2": {
+        "id": "upgrade:macrophage.a2",
+        "cost": 120,
+        "effects": [
+          {
+            "kind": "chain_hit",
+            "extraTargets": 1,
+            "rangeCells": 0.5
+          }
+        ]
+      },
+      "b1": {
+        "id": "upgrade:macrophage.b1",
+        "cost": 60,
+        "effects": [
+          {
+            "kind": "fire_rate_permille",
+            "value": 400
+          }
+        ]
+      },
+      "b2": {
+        "id": "upgrade:macrophage.b2",
+        "cost": 120,
+        "effects": [
+          {
+            "kind": "radius_add",
+            "value": 1
+          },
+          {
+            "kind": "damage_mult_vs_marked_permille",
+            "value": 300
+          }
+        ]
+      }
+    },
+    "counters": [
+      "gene:speed",
+      "gene:decoy"
+    ],
+    "counteredBy": [
+      "gene:resist_kinetic",
+      "gene:armor_shell",
+      "gene:swarm",
+      "gene:camouflage"
+    ],
+    "prototype": true,
+    "phase": 0
+  },
+  "tower:neutrophil": {
+    "id": "tower:neutrophil",
+    "damageType": "damage:oxidative",
+    "radius": 1.75,
+    "dps": 12,
+    "hitTicks": 20,
+    "hitDamage": 12,
+    "cost": 120,
+    "hp": 300,
+    "priority": "most_grouped",
+    "effects": [
+      {
+        "kind": "aoe_radius",
+        "value": 0.75
+      },
+      {
+        "kind": "burn",
+        "dps": 4,
+        "ticks": 60
+      }
+    ],
+    "upgrades": {
+      "a1": {
+        "id": "upgrade:neutrophil.a1",
+        "cost": 70,
+        "effects": []
+      },
+      "a2": {
+        "id": "upgrade:neutrophil.a2",
+        "cost": 140,
+        "effects": []
+      },
+      "b1": {
+        "id": "upgrade:neutrophil.b1",
+        "cost": 70,
+        "effects": []
+      },
+      "b2": {
+        "id": "upgrade:neutrophil.b2",
+        "cost": 140,
+        "effects": []
+      }
+    },
+    "counters": [
+      "gene:group_size",
+      "gene:swarm",
+      "gene:split_on_death",
+      "gene:spores",
+      "gene:choke_pause",
+      "gene:armor_shell"
+    ],
+    "counteredBy": [
+      "gene:resist_oxidative",
+      "gene:tower_fear",
+      "gene:speed",
+      "gene:size"
+    ],
+    "prototype": true,
+    "phase": 0
+  },
+  "tower:complement": {
+    "id": "tower:complement",
+    "damageType": "damage:enzymatic",
+    "radius": 4,
+    "dps": 16,
+    "hitTicks": 20,
+    "hitDamage": 16,
+    "cost": 140,
+    "hp": 300,
+    "priority": "highest_hp",
+    "effects": [],
+    "upgrades": {
+      "a1": {
+        "id": "upgrade:complement.a1",
+        "cost": 80,
+        "effects": []
+      },
+      "a2": {
+        "id": "upgrade:complement.a2",
+        "cost": 160,
+        "effects": []
+      },
+      "b1": {
+        "id": "upgrade:complement.b1",
+        "cost": 80,
+        "effects": []
+      },
+      "b2": {
+        "id": "upgrade:complement.b2",
+        "cost": 160,
+        "effects": []
+      }
+    },
+    "counters": [
+      "gene:armor_shell",
+      "gene:burrow",
+      "gene:hp",
+      "gene:latency",
+      "gene:regen"
+    ],
+    "counteredBy": [
+      "gene:resist_enzymatic",
+      "gene:swarm",
+      "gene:decoy"
+    ],
+    "prototype": true,
+    "phase": 0
+  },
+  "tower:mast_cell": {
+    "id": "tower:mast_cell",
+    "damageType": "damage:signal",
+    "radius": 2,
+    "dps": 0,
+    "hitTicks": 0,
+    "hitDamage": 0,
+    "cost": 90,
+    "hp": 300,
+    "priority": "none",
+    "effects": [
+      {
+        "kind": "slow_field_permille",
+        "value": 350
+      }
+    ],
+    "upgrades": {
+      "a1": {
+        "id": "upgrade:mast_cell.a1",
+        "cost": 50,
+        "effects": []
+      },
+      "a2": {
+        "id": "upgrade:mast_cell.a2",
+        "cost": 100,
+        "effects": []
+      },
+      "b1": {
+        "id": "upgrade:mast_cell.b1",
+        "cost": 50,
+        "effects": []
+      },
+      "b2": {
+        "id": "upgrade:mast_cell.b2",
+        "cost": 100,
+        "effects": []
+      }
+    },
+    "counters": [
+      "gene:speed",
+      "gene:group_size",
+      "gene:size",
+      "gene:regen"
+    ],
+    "counteredBy": [
+      "gene:resist_signal",
+      "gene:tower_fear",
+      "gene:burrow"
+    ],
+    "prototype": true,
+    "phase": 0
+  }
+}

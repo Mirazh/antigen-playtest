@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "economy": {
+    "startAtp": 300,
+    "incomeBase": 40,
+    "incomeSlope": 8,
+    "killDivisor": 8,
+    "noLeakBase": 15,
+    "noLeakSlope": 2,
+    "sellRefundPermille": 700,
+    "relocateFeePermille": 150
+  },
+  "biomass": {
+    "b0": 100,
+    "a": 25,
+    "b": 2,
+    "bossMultPermille": 1500,
+    "bossWaves": [
+      5,
+      10,
+      15,
+      20
+    ]
+  },
+  "evolution": {
+    "population": 64,
+    "mu": 16,
+    "lambda": 48,
+    "runsPerGeneration": 256,
+    "seedsPerGenome": 4,
+    "entropyThresholdRel": 600,
+    "entropyHysteresisPermille": 1150,
+    "degenerateK": 4,
+    "ceilingA": 1000,
+    "ceilingB": 150,
+    "ceilingMaxPermille": 6000,
+    "kmeansIterations": 8,
+    "spawnInterval": { "min": 10, "max": 30, "total": 600 },
+    "nicheShares": {
+      "3": [45, 33, 22],
+      "4": [40, 25, 20, 15],
+      "5": [35, 25, 18, 12, 10]
+    },
+    "phenoEntropyThreshold": 1500,
+    "degenerateArmGen": 6,
+    "degenerateHysteresisPermille": 1200,
+    "degradeMs": { "full": 2500, "half": 3000, "lambda": 4000 },
+    "immigrants": 4,
+    "evalBudgetMin": 60
+  },
+  "difficulty": {
+    "carrier": {
+      "biomassMultPermille": 850,
+      "mutationGenes": 1,
+      "mutationAmplitudePermille": 150,
+      "niches": 3,
+      "leakTargetPermille": 100
+    },
+    "outbreak": {
+      "biomassMultPermille": 1000,
+      "mutationGenes": 2,
+      "mutationAmplitudePermille": 250,
+      "niches": 4,
+      "leakTargetPermille": 250
+    },
+    "pandemic": {
+      "biomassMultPermille": 1200,
+      "mutationGenes": 3,
+      "mutationAmplitudePermille": 350,
+      "niches": 5,
+      "leakTargetPermille": 450
+    }
+  },
+  "run": {
+    "waves": 15,
+    "coreHp": 667,
+    "coreHpRestore": true,
+    "leakDamageDivisor": 1,
+    "scoreMultPermille": { "carrier": 800, "outbreak": 1000, "pandemic": 1300 }
+  },
+  "timers": {
+    "buildTicks": 1200,
+    "buildBossTicks": 1500
+  },
+  "fitnessWeights": {
+    "coreDamage": 4500,
+    "progress": 2500,
+    "lifetime": 1500,
+    "absorbed": 1500,
+    "stuckPenalty": 3000,
+    "capPenalty": 3000,
+    "lifetimeNormTicks": {
+      "biome:bloodstream": 1200,
+      "biome:lymph_node": 1800,
+      "biome:mucosa": 1200
+    }
+  },
+  "worker": {
+    "deadlineMs": 5000,
+    "stepBudgetMs": 4
+  }
+}

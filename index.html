@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Антиген</title>
+    <script type="module" crossorigin src="./assets/main-ChFqXqBC.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/dispatch-DJGccjZh.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-Cj28ECXW.css">
+  </head>
+  <!--
+    `data-antigen-page` — метка страницы для спеков оснастки (T-0.6.6). Та же, что у `parity.html`, и
+    по той же причине: `vite preview` отдаёт на ненайденный путь запасной `index.html` со статусом
+    200, поэтому кода ответа для опознания страницы не хватает. Спек полного забега проверяет метку
+    до ожидания хука — иначе подмена страницы читалась бы таймаутом ожидания, а не отказом.
+  -->
+  <body data-antigen-page="game">
+    <!--
+      Шесть элементов раскладки §14.3. Порядок в разметке — порядок колонок grid: канвас поля в
+      первой, панель во второй. Четыре оставшихся слоя позиционируются абсолютно и из потока grid
+      выпадают, поэтому их место в разметке на раскладку не влияет, а `z-index` задан в layout.css
+      колонкой `z` той же таблицы.
+    -->
+    <div id="app">
+      <canvas id="field"></canvas>
+      <div id="panel"></div>
+      <div id="hud"></div>
+      <div id="screen"></div>
+      <div id="modal"></div>
+      <div id="toast"></div>
+    </div>
+  </body>
+</html>

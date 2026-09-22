@@ -1,0 +1,699 @@
+{
+  "gene:speed": {
+    "id": "gene:speed",
+    "index": 0,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0.6,
+    "max": 2,
+    "default": 1,
+    "cost": {
+      "k": 15,
+      "pow": 1,
+      "offset": 1,
+      "flat": 0,
+      "onlyAbove": 0,
+      "floor": -6
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:mast_cell",
+      "tower:fibroblast",
+      "zone:edema"
+    ],
+    "template": "T_SPEED",
+    "visual": {
+      "layer": "flagella",
+      "priority": 4
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:hp": {
+    "id": "gene:hp",
+    "index": 1,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0.5,
+    "max": 4,
+    "default": 1,
+    "cost": {
+      "k": 8,
+      "pow": 1,
+      "offset": 1,
+      "flat": 0,
+      "onlyAbove": 0,
+      "floor": -4
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:nk_cell",
+      "tower:complement",
+      "tower:eosinophil",
+      "vaccine:adjuvant"
+    ],
+    "template": "T_HP",
+    "visual": {
+      "layer": "inner_disk",
+      "priority": 2
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:resist_kinetic": {
+    "id": "gene:resist_kinetic",
+    "index": 2,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0,
+    "max": 0.8,
+    "default": 0,
+    "cost": {
+      "k": 25,
+      "pow": 2,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "sumConstraint": {
+      "group": "resist",
+      "max": 1.6
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:neutrophil",
+      "tower:complement",
+      "vaccine:memory_serum",
+      "upgrade:b_cell.a1"
+    ],
+    "template": "T_RESIST",
+    "visual": {
+      "layer": "ring_sector",
+      "sectorDeg": [
+        0,
+        120
+      ],
+      "pattern": "hexagons",
+      "priority": 2
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:resist_oxidative": {
+    "id": "gene:resist_oxidative",
+    "index": 3,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0,
+    "max": 0.8,
+    "default": 0,
+    "cost": {
+      "k": 25,
+      "pow": 2,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "sumConstraint": {
+      "group": "resist",
+      "max": 1.6
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:macrophage",
+      "tower:complement",
+      "vaccine:memory_serum",
+      "upgrade:b_cell.a1"
+    ],
+    "template": "T_RESIST",
+    "visual": {
+      "layer": "ring_sector",
+      "sectorDeg": [
+        120,
+        240
+      ],
+      "pattern": "ribs",
+      "priority": 2
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:resist_enzymatic": {
+    "id": "gene:resist_enzymatic",
+    "index": 4,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0,
+    "max": 0.8,
+    "default": 0,
+    "cost": {
+      "k": 25,
+      "pow": 2,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "sumConstraint": {
+      "group": "resist",
+      "max": 1.6
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:macrophage",
+      "tower:neutrophil",
+      "vaccine:memory_serum",
+      "upgrade:b_cell.a1"
+    ],
+    "template": "T_RESIST",
+    "visual": {
+      "layer": "ring_sector",
+      "sectorDeg": [
+        240,
+        360
+      ],
+      "pattern": "dots",
+      "priority": 2
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:group_size": {
+    "id": "gene:group_size",
+    "index": 5,
+    "kind": "stat",
+    "scale": 1,
+    "min": 1,
+    "max": 8,
+    "default": 2,
+    "cost": {
+      "k": 0,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": false,
+    "requiresAny": [
+      "tower:neutrophil",
+      "tower:mast_cell",
+      "tower:eosinophil"
+    ],
+    "template": "T_GROUP",
+    "visual": {
+      "layer": "group_links",
+      "priority": 4
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:path_preference": {
+    "id": "gene:path_preference",
+    "index": 6,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": -1,
+    "max": 1,
+    "default": 0,
+    "cost": {
+      "k": 0,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": false,
+    "requiresAny": [
+      "action:relocate",
+      "vaccine:chemokine_gradient",
+      "tower:dendritic"
+    ],
+    "template": "T_ROUTE",
+    "visual": {
+      "layer": "flagella_tilt",
+      "priority": 4
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:choke_pause": {
+    "id": "gene:choke_pause",
+    "index": 7,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 3,
+    "default": 0,
+    "flagThreshold": 0.3,
+    "cost": {
+      "k": 0,
+      "pow": 1,
+      "offset": 0,
+      "flat": 1,
+      "onlyAbove": 0.3
+    },
+    "phenotypeFeature": false,
+    "requiresAny": [
+      "tower:eosinophil",
+      "tower:neutrophil",
+      "zone:fever_zone"
+    ],
+    "template": "T_CHOKE",
+    "visual": {
+      "layer": "icon",
+      "priority": 5
+    },
+    "prototype": true,
+    "phase": 0
+  },
+  "gene:armor_shell": {
+    "id": "gene:armor_shell",
+    "index": 8,
+    "kind": "stat",
+    "scale": 1,
+    "min": 0,
+    "max": 30,
+    "default": 0,
+    "cost": {
+      "k": 0.6,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:complement",
+      "tower:nk_cell",
+      "tower:t_killer",
+      "tower:neutrophil"
+    ],
+    "template": "T_ARMOR",
+    "visual": {
+      "layer": "ring_thickness",
+      "priority": 1
+    },
+    "prototype": false,
+    "phase": 1
+  },
+  "gene:size": {
+    "id": "gene:size",
+    "index": 9,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0.7,
+    "max": 2,
+    "default": 1,
+    "cost": {
+      "k": 8,
+      "pow": 1,
+      "offset": 1,
+      "flat": 0,
+      "onlyAbove": 0,
+      "floor": -2.4
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:eosinophil",
+      "tower:nk_cell",
+      "tower:mast_cell"
+    ],
+    "template": "T_STAT",
+    "visual": {
+      "layer": "body_scale",
+      "priority": 1
+    },
+    "prototype": false,
+    "phase": 1
+  },
+  "gene:regen": {
+    "id": "gene:regen",
+    "index": 10,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0,
+    "max": 4,
+    "default": 0,
+    "cost": {
+      "k": 3,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:interferon",
+      "tower:nk_cell",
+      "tower:complement",
+      "upgrade:mast_cell.b1",
+      "upgrade:eosinophil.b1",
+      "zone:fever_zone"
+    ],
+    "template": "T_STAT",
+    "visual": {
+      "layer": "core_pulse",
+      "priority": 4
+    },
+    "prototype": false,
+    "phase": 1
+  },
+  "gene:resist_signal": {
+    "id": "gene:resist_signal",
+    "index": 11,
+    "kind": "stat",
+    "scale": 1000,
+    "min": 0,
+    "max": 0.8,
+    "default": 0,
+    "cost": {
+      "k": 10,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "upgrade:mast_cell.b1",
+      "upgrade:mast_cell.b2",
+      "tower:fibroblast",
+      "zone:edema"
+    ],
+    "template": "T_RESIST_SIGNAL",
+    "visual": {
+      "layer": "outline",
+      "pattern": "solid_dark",
+      "outlinePriority": 3,
+      "priority": 3
+    },
+    "prototype": false,
+    "phase": 1
+  },
+  "gene:tower_fear": {
+    "id": "gene:tower_fear",
+    "index": 12,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 1,
+    "default": 0,
+    "flagThreshold": 0.1,
+    "cost": {
+      "k": 0,
+      "pow": 1,
+      "offset": 0,
+      "flat": 1,
+      "onlyAbove": 0.1
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:fibroblast",
+      "vaccine:chemokine_gradient",
+      "tower:interferon",
+      "tower:t_killer"
+    ],
+    "template": "T_FEAR",
+    "visual": {
+      "layer": "trail",
+      "pattern": "dashed",
+      "icon": true,
+      "priority": 4
+    },
+    "prototype": false,
+    "phase": 1
+  },
+  "gene:decoy": {
+    "id": "gene:decoy",
+    "index": 13,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 1,
+    "default": 0,
+    "cost": {
+      "k": 6,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:dendritic",
+      "action:priority_marked_first",
+      "upgrade:b_cell.b2",
+      "tower:t_killer",
+      "vaccine:opsonin_serum"
+    ],
+    "template": "T_DECOY",
+    "visual": {
+      "layer": "halo",
+      "priority": 3
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:swarm": {
+    "id": "gene:swarm",
+    "index": 14,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 1,
+    "default": 0,
+    "cost": {
+      "k": 2,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:neutrophil",
+      "upgrade:mast_cell.b2",
+      "zone:inflammation"
+    ],
+    "template": "T_BEHAVIOR_NEW",
+    "visual": {
+      "layer": "group_links",
+      "priority": 4
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:burrow": {
+    "id": "gene:burrow",
+    "index": 15,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 1,
+    "default": 0,
+    "cost": {
+      "k": 8,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:complement",
+      "upgrade:interferon.b2",
+      "tower:b_cell"
+    ],
+    "template": "T_BEHAVIOR_NEW",
+    "visual": {
+      "layer": "outline",
+      "pattern": "dashed",
+      "outlinePriority": 1,
+      "icon": true,
+      "priority": 3
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:split_on_death": {
+    "id": "gene:split_on_death",
+    "index": 16,
+    "kind": "behavior",
+    "scale": 1,
+    "min": 0,
+    "max": 3,
+    "default": 0,
+    "cost": {
+      "k": 5,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:neutrophil",
+      "upgrade:interferon.a1",
+      "vaccine:sporicide"
+    ],
+    "template": "T_BEHAVIOR_NEW",
+    "visual": {
+      "layer": "body_lobes",
+      "priority": 1
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:camouflage": {
+    "id": "gene:camouflage",
+    "index": 17,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 1,
+    "default": 0,
+    "cost": {
+      "k": 6,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:b_cell",
+      "tower:dendritic",
+      "vaccine:opsonin_serum",
+      "zone:inflammation"
+    ],
+    "template": "T_BEHAVIOR_NEW",
+    "visual": {
+      "layer": "body_alpha",
+      "outlinePriority": 2,
+      "priority": 3
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:spores": {
+    "id": "gene:spores",
+    "index": 18,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 1,
+    "default": 0,
+    "cost": {
+      "k": 5,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:neutrophil",
+      "upgrade:b_cell.b1",
+      "upgrade:interferon.a1",
+      "vaccine:sporicide"
+    ],
+    "template": "T_BEHAVIOR_NEW",
+    "visual": {
+      "layer": "body_pattern",
+      "pattern": "spots",
+      "priority": 2
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:toxin": {
+    "id": "gene:toxin",
+    "index": 19,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 1,
+    "default": 0,
+    "cost": {
+      "k": 7,
+      "pow": 1,
+      "offset": 0,
+      "flat": 0,
+      "onlyAbove": 0
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "vaccine:antitoxin",
+      "upgrade:fibroblast.a2",
+      "upgrade:b_cell.b1",
+      "action:spacing"
+    ],
+    "template": "T_BEHAVIOR_NEW",
+    "visual": {
+      "layer": "trail",
+      "pattern": "droplets",
+      "priority": 4
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:latency": {
+    "id": "gene:latency",
+    "index": 20,
+    "kind": "behavior",
+    "scale": 1000,
+    "min": 0,
+    "max": 5,
+    "default": 0,
+    "flagThreshold": 0.5,
+    "cost": {
+      "k": 0,
+      "pow": 1,
+      "offset": 0,
+      "flat": 1,
+      "onlyAbove": 0.5
+    },
+    "phenotypeFeature": true,
+    "requiresAny": [
+      "tower:complement",
+      "tower:eosinophil",
+      "tower:dendritic"
+    ],
+    "template": "T_BEHAVIOR_NEW",
+    "visual": {
+      "layer": "icon",
+      "priority": 5
+    },
+    "prototype": false,
+    "phase": 2
+  },
+  "gene:mutability": {
+    "id": "gene:mutability",
+    "index": 21,
+    "kind": "meta",
+    "scale": 1000,
+    "min": 0.5,
+    "max": 2,
+    "default": 1,
+    "cost": {
+      "k": 3,
+      "pow": 1,
+      "offset": 1,
+      "flat": 0,
+      "onlyAbove": 0,
+      "floor": 0
+    },
+    "phenotypeFeature": false,
+    "requiresAny": [
+      "vaccine:mutagen_block",
+      "biopsy",
+      "tower:dendritic"
+    ],
+    "template": "T_STAT",
+    "visual": {
+      "layer": "core_flicker",
+      "priority": 4
+    },
+    "prototype": false,
+    "phase": 2
+  }
+}
