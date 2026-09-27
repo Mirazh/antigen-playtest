@@ -98,5 +98,8 @@
   "worker": {
     "deadlineMs": 5000,
     "stepBudgetMs": 4
+  },
+  "movement": {
+    "stromaPathPreferencePermille": 500
   }
 }
