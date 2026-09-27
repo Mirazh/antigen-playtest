@@ -1,0 +1,42 @@
+{
+  "bg": "#F7F4EE",
+  "tissue": "#E4DCCB",
+  "ally": "#1F6FB2",
+  "enemy": "#D9532B",
+  "danger": "#B3261E",
+  "ui": "#1E2430",
+  "accent": "#159A8E",
+  "kinetic": "#6B7A8C",
+  "oxidative": "#E39B1B",
+  "enzymatic": "#3F9A4A",
+  "signal": "#8E6BC1",
+  "derived": {
+    "wall": "#B9AE9B"
+  },
+  "interface": {
+    "muted": "#4C515B",
+    "warn": "#9A5B00",
+    "focus": "#0B57D0",
+    "surface": "#FFFFFF",
+    "disabledBg": "#EEEBE4",
+    "disabledText": "#5A5F68",
+    "openBg": "#EAF1F0",
+    "hoverBg": "#F1EEE8",
+    "ink": "#141820",
+    "coreBar": "#6A5AAE",
+    "coreLoss": "#E5484D",
+    "stateHealthy": "#1E6B45",
+    "stateDamaged": "#A8323A",
+    "stateCritical": "#A01818",
+    "towerTag": "#1F4F86",
+    "routeMain": "#075E55",
+    "routeSide": "#6A4A63",
+    "routeCell": "#0B8478",
+    "buildOk": "#2E9E6A",
+    "buildOkEdge": "#1E7A4F",
+    "buildBlock": "#E08A00",
+    "buildBlockEdge": "#B86E00",
+    "pathHatch": "#9C2A4A",
+    "gridLine": "#2A1F2D"
+  }
+}

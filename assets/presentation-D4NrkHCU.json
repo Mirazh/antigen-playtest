@@ -1,0 +1,6 @@
+{
+  "coreStates": {
+    "damagedBelowPermille": 700,
+    "criticalAtOrBelowPermille": 250
+  }
+}

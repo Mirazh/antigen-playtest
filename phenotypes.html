@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Антиген · фенотипы «Препарата»</title>
+    <script type="module" crossorigin src="./assets/phenotypes-olOVL9gG.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/palette-DT21u18W.js">
+    <link rel="modulepreload" crossorigin href="./assets/State-3sV0XrC-.js">
+    <link rel="modulepreload" crossorigin href="./assets/MeshGeometry-Dhbknui1.js">
+    <link rel="modulepreload" crossorigin href="./assets/split-Qk2FD0pM.js">
+    <link rel="modulepreload" crossorigin href="./assets/tuning-CKv8N25u.js">
+    <link rel="stylesheet" crossorigin href="./assets/split-1DLoqM17.css">
+  </head>
+  <!--
+    Отладочная страница фенотипов «Препарата» (D281, D283–D285, D291): все каналы генов, включая оболочку и
+    дробление, которых в волнах фазы 0 нет (§7.7), — в движении, на тканевом фоне игрового масштаба.
+    Распад дробящегося сценарный: осколков ядро фазы 0 не рождает. Адрес: `?t=<с>` — остановить время,
+    `?shell=rigid` — «Слои» и отладочная «Жёсткость», `?shell=plain` — оболочка без «Слоёв» (по умолчанию
+    они есть, D298), `?reduced=1` — «меньше движения».
+  -->
+  <body data-antigen-page="phenotypes">
+    <div id="app" style="position: relative; display: block; height: 100dvh; overflow: hidden">
+      <canvas id="field" style="position: absolute; left: 0; top: 0"></canvas>
+      <div id="labels" style="position: absolute; inset: 0; pointer-events: none"></div>
+    </div>
+  </body>
+</html>
