@@ -52,7 +52,8 @@
       "nucleus": "#8479BC",
       "chromatin": "#665A9F",
       "endoNucleus": "#6D60AA",
-      "edge": "#B0648C"
+      "edge": "#B0648C",
+      "shade": "#3A0F28"
     },
     "microbe": {
       "body": "#B8124A",
